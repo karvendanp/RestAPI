@@ -31,8 +31,8 @@ public class DemoController {
 	    return demoService.getCountry(code);
 	}
 	@PutMapping("/country")
-	public Boolean updateCountry(Country country) {
-	    return demoService.saveCountry(country);
+	public Boolean updateCountry(@RequestBody Country country) throws Exception {
+	    return demoService.saveCountry(country.getCode(),country);
 	}
 	/*@PostMapping("/country")
 	public Boolean saveCountry(@RequestBody Country country) {
